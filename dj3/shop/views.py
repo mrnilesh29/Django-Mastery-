@@ -8,5 +8,7 @@ def shop1(request,id) :
 def shop1_name(request,name) : 
     return HttpResponse(f" <h2> your name is {name} </h2> ")
 
-
+def allshops(request , **kwargs) : 
+    return HttpResponse("<h3>all shopes near me {kwargs} </h3> ")
+    
 
