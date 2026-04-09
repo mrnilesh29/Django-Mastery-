@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Store{% endblock %}</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0b0f19; /* soft dark */
+            color: #e6e6e6;
+        }
+
+        .navbar {
+            background-color: #111827;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eab308;
+        }
+
+        .logo {
+            color: #eab308;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #eab308;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .card {
+            background: #111827;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #1f2937;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #eab308;
+            transform: scale(1.02);
+        }
+
+        .btn {
+            background: #eab308;
+            color: #111827;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #facc15;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">MyStore 🛒</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/types/">Types</a>
+            <a href="/products/">Products</a>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
