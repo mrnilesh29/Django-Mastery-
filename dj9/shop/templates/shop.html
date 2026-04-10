@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cool Shop</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>🛍️ MyShop</h1>
+        <button onclick="toggleMode()">🌙</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to My Shop</h2>
+        <p>Best products at amazing prices 💥</p>
+    </section>
+
+    <!-- Products -->
+    <div class="container">
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200">
+            <h3>Shoes</h3>
+            <p>₹1299</p>
+            <button onclick="buyNow('Shoes')">Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200">
+            <h3>Watch</h3>
+            <p>₹899</p>
+            <button onclick="buyNow('Watch')">Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/200">
+            <h3>T-Shirt</h3>
+            <p>₹499</p>
+            <button onclick="buyNow('T-Shirt')">Buy Now</button>
+        </div>
+
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
