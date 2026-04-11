@@ -7,7 +7,7 @@ class surendera_store(models.Model):
     stable = models.IntegerField()
     owner = models.CharField()
     
-    def __init__(self):
+    def __str__(self):
         return self.name  
         
     

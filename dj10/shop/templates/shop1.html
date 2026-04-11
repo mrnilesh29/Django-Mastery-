@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+ <h3>Store customers</h3>
+
+{% if stores %}
+    {% for store in stores %}
+        <p>{{ store.name }} - {{ store.owner }} - {{ store.stable }}</p>
+    {% endfor %}
+{% endif %}
 
     <header>
         <h1>Welcome to My Website 🚀</h1>
