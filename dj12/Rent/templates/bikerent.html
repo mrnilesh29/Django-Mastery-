@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bike Rental</title>
+   {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <h1>Bike Rental System</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?bike">
+    <h3>Royal Enfield</h3>
+    <p class="price">₹800/day</p>
+    <button onclick="bookBike('Royal Enfield')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?sportsbike">
+    <h3>Yamaha R15</h3>
+    <p class="price">₹600/day</p>
+    <button onclick="bookBike('Yamaha R15')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?scooter">
+    <h3>Activa</h3>
+    <p class="price">₹300/day</p>
+    <button onclick="bookBike('Activa')">Book Now</button>
+  </div>
+</div>
+
+<div id="booking">
+  <h2>Booking Form</h2>
+  <p id="bikeName"></p>
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="date" id="date">
+  <button onclick="confirmBooking()">Confirm Booking</button>
+</div>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
