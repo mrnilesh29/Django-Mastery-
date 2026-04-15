@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent Details</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #1e293b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background: #111827;
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>📋 Rent Form</h2>
+
+    <form method="POST" action="{% url 'submit' %}">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Enter Name" required>
+
+        <input type="number" name="age" placeholder="Enter Age" required>
+
+        <textarea name="purpose" placeholder="Purpose of Rent"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

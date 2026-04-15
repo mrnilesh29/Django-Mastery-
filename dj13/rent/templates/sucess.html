@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Success</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: #111827;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            width: 320px;
+        }
+
+        h1 {
+            color: #22c55e;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #cbd5f5;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>✅ Booking Successful</h1>
+
+    <p>Thank you <b>{{ request.session.username }}</b>!</p>
+    <p>Your booking has been confirmed.</p>
+
+    <a href="{% url 'rent_details' %}">🔙 Book Again</a>
+</div>
+
+</body>
+</html>
