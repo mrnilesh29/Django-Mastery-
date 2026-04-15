@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Rental</title>
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+<body>
+
+<header>
+  <h1>🚗 Car Rental System</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?bmw-car">
+    <h3>BMW</h3>
+    <p class="price">₹3000/day</p>
+    <button onclick="bookCar('BMW')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?audi-car">
+    <h3>Audi</h3>
+    <p class="price">₹3500/day</p>
+    <button onclick="bookCar('Audi')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?suv-car">
+    <h3>Mahindra Thar</h3>
+    <p class="price">₹2500/day</p>
+    <button onclick="bookCar('Thar')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?hatchback-car">
+    <h3>Swift</h3>
+    <p class="price">₹1200/day</p>
+    <button onclick="bookCar('Swift')">Book Now</button>
+  </div>
+
+</div>
+
+<!-- Booking Form -->
+<div id="booking">
+  <h2>📋 Car Booking Form</h2>
+  <p id="carName"></p>
+
+  <input type="text" id="name" placeholder="Enter Your Name">
+  <input type="date" id="date">
+
+  <button onclick="confirmBooking()">Confirm Booking</button>
+</div>
+
+<script src="{% static 'js/script1.js' %}"></script>
+</body>
+</html>

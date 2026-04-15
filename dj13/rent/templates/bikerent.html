@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <title>Bike Rental</title>
+  <link rel="stylesheet" href={% static "css/style.css" %}>
+</head>
+<body>
+
+<header>
+  <h1>🏍️ Bike Rental System</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?royal-enfield">
+    <h3>Royal Enfield</h3>
+    <p class="price">₹800/day</p>
+    <button onclick="bookBike('Royal Enfield')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?yamaha-bike">
+    <h3>Yamaha R15</h3>
+    <p class="price">₹600/day</p>
+    <button onclick="bookBike('Yamaha R15')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?honda-activa">
+    <h3>Honda Activa</h3>
+    <p class="price">₹300/day</p>
+    <button onclick="bookBike('Honda Activa')">Book Now</button>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?sports-bike">
+    <h3>KTM Duke</h3>
+    <p class="price">₹900/day</p>
+    <button onclick="bookBike('KTM Duke')">Book Now</button>
+  </div>
+
+</div>
+
+<!-- Booking Form -->
+<div id="booking">
+  <h2>📋 Booking Form</h2>
+  <p id="bikeName"></p>
+
+  <input type="text" id="name" placeholder="Enter Your Name">
+  <input type="date" id="date">
+
+  <button onclick="confirmBooking()">Confirm Booking</button>
+</div>
+
+<script src={% static "js/script.js" %}></script>
+</body>
+</html>
