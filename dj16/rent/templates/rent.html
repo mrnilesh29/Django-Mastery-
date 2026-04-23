@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent Form</title>
+</head>
+<body>
+
+    <h2>Rented People Form</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div>
+                <label>{{ field.label }}</label><br>
+                {{ field }}
+
+                {% if field.errors %}
+                    <p style="color:red;">
+                        {{ field.errors }}
+                    </p>
+                {% endif %}
+            </div>
+            <br>
+        {% endfor %}
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
