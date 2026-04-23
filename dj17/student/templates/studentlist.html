@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+</head>
+<body>
+
+    <h2>Student List 📚</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Roll No</th>
+            <th>Class</th>
+            <th>Edit_Student</th>
+            <th>Delete_Student</th> 
+            
+            <!-- 👈 new column -->
+        </tr>
+
+        {% for i in student %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.roll_No }}</td>
+            <td>{{ i.wclass }}</td>
+            
+            <!-- 👇 Edit button -->
+            <td>
+                <a href="{% url 'update' i.id %}">Edit</a>
+                
+            </td>
+            <td>
+                <a href="{% url 'delete' i.id %}" style="color:white;"> Delete </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No data available</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="{% url 'student_add' %}">Add New Student</a>
+
+</body>
+</html>

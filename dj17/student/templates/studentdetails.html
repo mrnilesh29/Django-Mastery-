@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>📄 Student Details</h2>
+
+        <div class="card">
+            <p><strong>Name:</strong> {{ student.name }}</p>
+            <p><strong>Age:</strong> {{ student.age }}</p>
+            <p><strong>Roll No:</strong> {{ student.roll_No }}</p>
+            <p><strong>Class:</strong> {{ student.wclass }}</p>
+        </div>
+
+        <a href="{% url 'studentlist' %}" class="back-btn">⬅ Back to List</a>
+    </div>
+
+</body>
+</html>
