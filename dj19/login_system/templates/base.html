@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <title>Django App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🚀 My Django App</h2>
+</div>
+
+{% if messages %}
+    {% for message in messages %}
+        <p style="text-align:center;">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
