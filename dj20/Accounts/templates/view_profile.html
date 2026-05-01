@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align:center; color:white;">All Profiles</h2>
+
+{% for p in profile %}
+<div class="card">
+
+    {% if p.image %}
+        <img src="{{ p.image.url }}">
+    {% endif %}
+
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.email }}</p>
+    <p>{{ p.city }}</p>
+
+</div>
+{% endfor %}
+
+<a style="display:block; text-align:center; color:white;" href="{% url 'upload' %}">
+    Upload New Profile
+</a>
+
+{% endblock %}
