@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Shop Detail</h2>
+
+<p><strong>Name:</strong> {{ shop.name }}</p>
+
+<a href="{% url 'shop_update' shop.pk %}">✏️ Edit</a>
+<a href="{% url 'shop_delete' shop.pk %}">❌ Delete</a>
+<a href="{% url 'shop_list' %}">⬅ Back</a>
+
+{% endblock %}

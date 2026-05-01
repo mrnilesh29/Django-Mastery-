@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>All Shops</h2>
+
+<a href="{% url 'shop_create' %}">➕ Add Shop</a>
+
+<ul>
+    {% for shop in shop_list %}
+        <li>
+            {{ shop.name }}
+
+            <a href="{% url 'shop_detail' shop.pk %}">View</a>
+            <a href="{% url 'shop_update' shop.pk %}">Edit</a>
+            <a href="{% url 'shop_delete' shop.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
